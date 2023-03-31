@@ -20,6 +20,10 @@ public class MainApp {
         System.out.println(Arrays.toString(intArr));
         System.out.println(Arrays.toString(stringArr));
 
+        Integer [] intArr1 = {10,20,30,40};
+
+        System.out.println(integerArray.changeArrayToList(intArr1));
+
 
 
 

@@ -1,5 +1,8 @@
 package ru.geekbrains.generics.homework1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Array<T> {
 
     public void swap (T [] elements, int index1, int index2 ) {
@@ -8,8 +11,9 @@ public class Array<T> {
         elements [index2] = c;
     }
 
-    public void changeArrayToList (T [] elements) {
-
+    public ArrayList <T> changeArrayToList (T [] elements) {
+        ArrayList <T> list = new ArrayList<>(Arrays.asList(elements));
+        return list;
     }
 
 
