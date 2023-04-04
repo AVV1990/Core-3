@@ -6,10 +6,14 @@ import java.util.List;
 
 public class Box <T extends Fruit> {
 
-    private List <T> fruits;
+    private List<T> fruits;
 
-    public Box () {
+    public Box() {
         fruits = new ArrayList<>(Arrays.asList());
+    }
+
+    public List<T> getFruits() {
+        return fruits;
     }
 
     public float getWeight() {
@@ -24,10 +28,8 @@ public class Box <T extends Fruit> {
     }
 
 
-
-
-// метод добавления фрукта в коробку
-    public void addFruits (T fruit) {
+    // метод добавления фрукта в коробку
+    public void addFruits(T fruit) {
         fruits.add(fruit);
     }
 
@@ -35,7 +37,7 @@ public class Box <T extends Fruit> {
 //    Внутри класса Box сделать метод compare(), который позволяет сравнить текущую коробку с той, которую подадут в compare() в качестве параметра. true – если их массы
 // равны, false в противоположном случае. Можно сравнивать коробки с яблоками и апельсинами
 
-    public boolean compare (Box another) {
+    public boolean compare(Box another) {
         return this.getWeight() == another.getWeight();
     }
 
@@ -45,7 +47,13 @@ public class Box <T extends Fruit> {
 //    Соответственно, в текущей коробке фруктов не остается, а в другую перекидываются
 //    объекты, которые были в первой
 
-
+    public void pour(Box<T> another) {
+        List<T> anotherList = another.getFruits();
+        for (T fruit : anotherList) {
+            fruits.add(fruit);
+        }
+        another.fruits.clear();
+    }
 
 
 }
