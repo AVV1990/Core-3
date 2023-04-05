@@ -38,7 +38,7 @@ public class Box <T extends Fruit> {
 // равны, false в противоположном случае. Можно сравнивать коробки с яблоками и апельсинами
 
     public boolean compare(Box another) {
-        return this.getWeight() == another.getWeight();
+        return Math.abs(this.getWeight() - another.getWeight()) < 0.0001;
     }
 
 
